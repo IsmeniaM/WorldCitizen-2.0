@@ -6,9 +6,16 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseCore
 
 @main
 struct WorldCitizen_2_0App: App {
+    
+    
+    init() {
+        FirebaseApp.configure()
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()
