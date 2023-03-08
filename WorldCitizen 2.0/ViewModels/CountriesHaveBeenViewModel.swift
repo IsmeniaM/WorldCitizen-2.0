@@ -41,4 +41,16 @@ class CountriesHaveBeenViewModel: ObservableObject {
         }
     }
     
+    func removeCountries(atOffsets indexSet: IndexSet) {
+        let countriesHaveBeen = indexSet.lazy.map { self.countriesHaveBeen[$0]}
+        countriesHaveBeen.forEach { haveBeen in
+            if let documentId = haveBeen.id {
+                db.collection("havebeenList").document(documentId).delete { error in
+                    if let error = error {
+                        print("Unable to remove document: \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
+    }
 }

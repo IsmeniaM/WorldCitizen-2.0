@@ -40,6 +40,7 @@
 		08A0144F29B68BF300F4CB43 /* HaveBeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0144E29B68BF300F4CB43 /* HaveBeen.swift */; };
 		08A0145429B694A700F4CB43 /* CountriesHaveBeenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0145329B694A700F4CB43 /* CountriesHaveBeenViewModel.swift */; };
 		08A0145629B69A7500F4CB43 /* HaveBeenDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0145529B69A7500F4CB43 /* HaveBeenDetailsView.swift */; };
+		08A0145829B6B9ED00F4CB43 /* HaveBeenEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0145729B6B9ED00F4CB43 /* HaveBeenEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		08A0144E29B68BF300F4CB43 /* HaveBeen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveBeen.swift; sourceTree = "<group>"; };
 		08A0145329B694A700F4CB43 /* CountriesHaveBeenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesHaveBeenViewModel.swift; sourceTree = "<group>"; };
 		08A0145529B69A7500F4CB43 /* HaveBeenDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveBeenDetailsView.swift; sourceTree = "<group>"; };
+		08A0145729B6B9ED00F4CB43 /* HaveBeenEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveBeenEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				08A0141B29B62E3C00F4CB43 /* FavouritView.swift */,
 				08A0141D29B62E9300F4CB43 /* HaveBeenView.swift */,
 				08A0145529B69A7500F4CB43 /* HaveBeenDetailsView.swift */,
+				08A0145729B6B9ED00F4CB43 /* HaveBeenEditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				08A0142629B6615700F4CB43 /* Favourites.swift in Sources */,
 				08A013D529B5EB2700F4CB43 /* WorldCitizen_2_0App.swift in Sources */,
 				08A0141229B62C2600F4CB43 /* myPicturesView.swift in Sources */,
+				08A0145829B6B9ED00F4CB43 /* HaveBeenEditView.swift in Sources */,
 				08A0141829B62D2900F4CB43 /* DataContact.swift in Sources */,
 				08A0141A29B62DDA00F4CB43 /* ListView.swift in Sources */,
 				08A0142029B62EFB00F4CB43 /* HaveBeenViewModel.swift in Sources */,

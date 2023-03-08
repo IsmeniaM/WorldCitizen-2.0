@@ -14,9 +14,9 @@ class HaveBeenViewModel: ObservableObject {
     @Published var haveBeen: HaveBeen
     @Published var modified = false
     
-    private var cancellables = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>() //cancellable???
     
-    init( haveBeen: HaveBeen = HaveBeen(title: "", description: "", year: "")) {
+    init (haveBeen: HaveBeen = HaveBeen(title: "", description: "", year: "")) {
         self.haveBeen = haveBeen
         
         self.$haveBeen
@@ -27,7 +27,7 @@ class HaveBeenViewModel: ObservableObject {
             .store(in: &self.cancellables)
     }
     
-    //Firebase
+    //Firestore
     
     private var db = Firestore.firestore()
     
@@ -40,4 +40,48 @@ class HaveBeenViewModel: ObservableObject {
         }
     }
     
+    private func updateCountry(_ haveBeen: HaveBeen) {
+        if let documentId = haveBeen.id {
+            do {
+                try db.collection("havebeenList").document(documentId).setData(from: haveBeen)
+            }
+            catch {
+                print(error)
+            }
+        }
+    }
+    
+
+private func updateOrAddCountry(_ haveBeen: HaveBeen) {
+    if let _ = haveBeen.id {
+        self.updateCountry(self.haveBeen)
+    }
+    else {
+        addCountry(haveBeen)
+    }
 }
+
+
+private func removeCountry(_ haveBeen: HaveBeen) {
+    if let documentId = haveBeen.id {
+        db.collection("havebeenList").document(documentId).delete { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
+}
+
+//UI handlers
+
+func handleDoneTapped() {
+    self.updateOrAddCountry(haveBeen) //tirar havebeen
+}
+
+func handleDeleteTapped() {
+    self.removeCountry(haveBeen)
+}
+
+}
+

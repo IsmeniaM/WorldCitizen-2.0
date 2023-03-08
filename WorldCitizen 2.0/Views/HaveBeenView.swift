@@ -11,10 +11,11 @@ import SwiftUI
 struct HaveBeenView: View {
     
    @StateObject var viewModel = CountriesHaveBeenViewModel()
+   @State var presentAddHaveBeenSheet = false //VER COMO É
     
     private var addButton: some View {
-        Button(action: {}) {
-            Image(systemName: "plus")
+        Button(action: { self.presentAddHaveBeenSheet.toggle() }) {
+            Image(systemName: "plus")   
         }
     }
     
@@ -43,6 +44,9 @@ struct HaveBeenView: View {
                  print("HaveBeenList appears. Subscribing to data updates")
                  self.viewModel.subscribe()
              }
+             .sheet(isPresented: self.$presentAddHaveBeenSheet) {
+                 HaveBeenEditView() //apagar havebeen ?
+              }
             }
         }
   }
