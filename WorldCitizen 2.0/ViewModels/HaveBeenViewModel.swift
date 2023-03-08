@@ -14,7 +14,7 @@ class HaveBeenViewModel: ObservableObject {
     @Published var haveBeen: HaveBeen
     @Published var modified = false
     
-    private var cancellables = Set<AnyCancellable>() //cancellable???
+    private var cancellables = Set<AnyCancellable>() 
     
     init (haveBeen: HaveBeen = HaveBeen(title: "", description: "", year: "")) {
         self.haveBeen = haveBeen
@@ -76,7 +76,7 @@ private func removeCountry(_ haveBeen: HaveBeen) {
 //UI handlers
 
 func handleDoneTapped() {
-    self.updateOrAddCountry(haveBeen) //tirar havebeen
+    self.updateOrAddCountry(haveBeen)
 }
 
 func handleDeleteTapped() {
